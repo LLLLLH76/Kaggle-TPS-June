@@ -22,7 +22,14 @@ if __name__ == '__main__':
     test[features] = scaler.transform(test[features])
     X=train.drop(['target','id'],axis=1)
     Y=train['target']
-    params = {'n_estimators': 917, 'max_depth': 6, 'reg_alpha': 9.736602014559566, 'reg_lambda': 0.0004577827887288241, 'min_child_weight': 0.005161022323227045, 'gamma': 1.1453113147311293, 'learning_rate': 0.04665662582966712, 'colsample_bytree': 0.1}
+    params = {'n_estimators': 917, 
+              'max_depth': 6, 
+              'reg_alpha': 9.736602014559566, 
+              'reg_lambda': 0.0004577827887288241, 
+              'min_child_weight': 0.005161022323227045, 
+              'gamma': 1.1453113147311293, 
+              'learning_rate': 0.04665662582966712, 
+              'colsample_bytree': 0.1}
     model = XGBClassifier(**params) 
     model.fit(X, Y)
     cols = list(test.columns)
